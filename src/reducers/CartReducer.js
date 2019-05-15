@@ -6,8 +6,8 @@ export default function (state = InitialState.cart, action) {
 		case types.GET_CART_SUCCESS:
 			return state;
 		case types.ADD_TO_CART_SUCCESS:
-			console.log('ADD_TO_CART_SUCCESS state', state)
-			var exists = false;
+			console.log('ADD_TO_CART_SUCCESS state', state);
+			let exists = false;
 			const newState = state.map(item => {
 				if (item.id === action.item.id) {
 					exists = true;
@@ -31,7 +31,7 @@ export default function (state = InitialState.cart, action) {
 		case types.REMOVE_FROM_CART_SUCCESS:
 			const remaingList = [
 				...state.filter(i => i.id !== action.item.id)
-			]
+			];
 			return remaingList;
 		default:
 			return state;

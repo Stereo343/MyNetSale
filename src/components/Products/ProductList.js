@@ -22,15 +22,14 @@ class ProductsList extends Component {
 
     const { navigate } = this.props.navigation;
     const { products } = this.props;
-      console.log(this.props);
-      //console.log(products.categories.name);
+
     const Items = <FlatList contentContainerStyle={styles.list} numColumns={2}
       data={products || []}
       keyExtractor={this._keyExtractor}
       renderItem={({ item }) =>
       <TouchableHighlight style={{width:'50%'}} onPress={() => navigate("Product", { product: item })} underlayColor="white">
         <View style={styles.view} >
-          <Image style={styles.image} source={{uri: item.images[0].src}} />
+          <Image style={styles.image} source={item.images.length > 0 ? {uri: item.images[0].src} : require('../../../assets/img_placeholder.png')} />
           <Text style={styles.text}>{item.name}</Text>
         </View>
       </TouchableHighlight>

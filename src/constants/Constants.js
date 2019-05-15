@@ -1,10 +1,10 @@
 const Constants = {
     URL: {
-        wc: 'https://clangend.alwaysdata.net/wp-json/wc/v3/'
+        wc: 'https://brunocornet.alwaysdata.net/wp-json/wc/v3/'
     },
     Keys: {
-        ConsumerKey: 'ck_edb906ec994db77e1be990ef30c65d47cf902542',
-	    ConsumerSecret: 'cs_e23f3759c97cbac5abe46b68c15307df4ff7f069'
+        ConsumerKey: 'ck_4dd15322cf09864502bf49c56d4b43e3038d27e6',
+	    ConsumerSecret: 'cs_a0e90be34807eed5ff362d1537da0f2c523bf031'
     }
 };
 

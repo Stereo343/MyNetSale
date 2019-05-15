@@ -19,7 +19,7 @@ const DrawerNavigation = DrawerNavigator({
             headerTitle: (
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                     <Image resizeMode={'contain'}
-                           style={{height: 50, width: 200}} source={require('./assets/img_0.png')}/>
+                           style={{height: 50, width: 200}} source={require('./assets/mynetsale_logo.png')}/>
                 </View>
             ),
         }
@@ -30,7 +30,7 @@ const DrawerNavigation = DrawerNavigator({
             headerTitle: (
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                     <Image resizeMode={'contain'}
-                           style={{height: 50, width: 200}} source={require('./assets/img_0.png')}/>
+                           style={{height: 50, width: 200}} source={require('./assets/mynetsale_logo.png')}/>
                 </View>
             ),
         }
@@ -47,7 +47,7 @@ const DrawerNavigation = DrawerNavigator({
             headerTitle: (
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                     <Image resizeMode={'contain'}
-                           style={{height: 50, width: 200}} source={require('./assets/img_0.png')}/>
+                           style={{height: 50, width: 200}} source={require('./assets/mynetsale_logo.png')}/>
                 </View>
             ),
         }
@@ -67,8 +67,8 @@ const StackNavigation = StackNavigator({
     headerMode: 'float',
     navigationOptions: ({navigation, screenProps}) => ({
 
-        headerStyle: {backgroundColor: '#000000'},
-        headerTintColor: 'white',
+        headerStyle: {backgroundColor: '#FFFFFF'},
+        headerTintColor: '#000000',
         inactiveBackgroundColor: 'yellow',
         headerLeft: drawerButton(navigation),
         headerRight: cartButton(navigation, screenProps)
@@ -127,7 +127,6 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        this.animation.play();
         setTimeout(() => {
             this.setState({ isLoading: true });
         }, 2000);
@@ -139,17 +138,6 @@ class App extends React.Component {
         if (isLoading === false) {
             return (
                 <View style={styles.contain}>
-                    <LottieView
-                        ref={animation => {
-                            this.animation = animation;
-                        }}
-                        autoPlay
-                        autoSize={false}
-                        loop={false}
-                        source={require('./src/Animations/data')}
-                        //onAnimationFinish={}
-
-                    />
                 </View>
             );
         }

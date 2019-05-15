@@ -36,7 +36,7 @@ class Product extends React.Component {
         const product = this.props.navigation.state.params.product;
         return (
             <ScrollView>
-                <Image style={styles.image} source={{ uri: product.images[0].src }} />
+                <Image style={styles.image} source={product.images.length > 0 ? {uri: product.images[0].src} : require('../../../assets/img_placeholder.png')} />
                 <Text style={styles.text}>{product.name}     $ {product.price}</Text>
                 <View style={{ display: 'flex', flexDirection: 'row', padding: 10, marginLeft: 20, marginBottom: 20 }}>
                     <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
