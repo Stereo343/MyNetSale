@@ -47,7 +47,7 @@ const DrawerNavigation = DrawerNavigator({
             headerTitle: (
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                     <Image resizeMode={'contain'}
-                           style={{height: 50, width: 200}} source={require('./assets/mynetsale_logo.png')}/>
+                           style={{height: 70, width: 200}} source={require('./assets/mynetsale_logo.png')}/>
                 </View>
             ),
         }
@@ -138,6 +138,11 @@ class App extends React.Component {
         if (isLoading === false) {
             return (
                 <View style={styles.contain}>
+                    <Image
+                      resizeMode={'contain'}
+                      source={ require('./assets/mynetsale_logo.png') }
+                      style={styles.image}
+                    />
                 </View>
             );
         }
@@ -155,8 +160,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignContent: 'center',
-        backgroundColor: 'black'
-    }
+        backgroundColor: 'ivory'
+    },
+    image: {
+        flex: 1,
+        width: undefined,
+        height: undefined
+    },
 });
 
 export default App;

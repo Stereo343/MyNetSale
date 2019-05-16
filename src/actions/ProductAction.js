@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import Constants from '../constants/Constants';
-import *  as types from '../constants/ActionTypes';
+import * as types from '../constants/ActionTypes';
 
 export function getProducts() {
     return (dispatch) => {

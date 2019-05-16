@@ -12,8 +12,9 @@ class ProductsList extends Component {
   
 
   componentDidMount() {
-    this.props.ProductAction.getProducts();
+    this.props.ProductAction.getProducts().then(() => {
 
+    });
   }
 
   _keyExtractor = (item, index) => item.id;
@@ -22,6 +23,7 @@ class ProductsList extends Component {
 
     const { navigate } = this.props.navigation;
     const { products } = this.props;
+    console.log(products);
 
     const Items = <FlatList contentContainerStyle={styles.list} numColumns={2}
       data={products || []}

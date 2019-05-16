@@ -22,7 +22,7 @@ class Product extends React.Component {
         }
     };
 
-    increaseQuantitiy = () => {
+    increaseQuantity = () => {
         this.setState({
             quantity: this.state.quantity - 1 + 2
         });
@@ -49,7 +49,7 @@ class Product extends React.Component {
                             value={`${this.state.quantity}`}
                             keyboardType="numeric"
                         />
-                        <TouchableOpacity style={styles.inceaseButton} onPress={this.increaseQuantitiy} >
+                        <TouchableOpacity style={styles.increaseButton} onPress={this.increaseQuantity} >
                             <Text> + </Text>
                         </TouchableOpacity>
                     </View>
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 17,
         borderTopLeftRadius: 17,
     },
-    inceaseButton: {
+    increaseButton: {
         height: 40,
         width: 30,
         padding: 8,

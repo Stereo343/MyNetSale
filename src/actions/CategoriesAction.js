@@ -8,9 +8,15 @@ export function getCategories() {
         const url = `${Constants.URL.wc}products/categories?per_page=100&consumer_key=${Constants.Keys.ConsumerKey}&consumer_secret=${Constants.Keys.ConsumerSecret}`;
 
         return axios.get(url).then(response => {
+            let categories = [];
+            for (const category in response.data) {
+                if (response.data[category]._links.hasOwnProperty("up")) {
+                    categories.push(response.data[category]);
+                }
+            }
             dispatch({
                     type: types.GET_CATEGORIES_SUCCESS,
-                    categories: response.data
+                    categories: categories,
                 }
             )
         }).catch(err => {
