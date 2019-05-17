@@ -3,9 +3,9 @@ import axios from 'axios';
 import Constants from '../constants/Constants';
 import * as types from '../constants/ActionTypes';
 
-export function getProducts() {
+export function getProducts(id) {
     return (dispatch) => {
-        const url = `${Constants.URL.wc}products?per_page=100&consumer_key=${Constants.Keys.ConsumerKey}&consumer_secret=${Constants.Keys.ConsumerSecret}`
+        const url = `${Constants.URL.wc}products?category=${id}&per_page=100&consumer_key=${Constants.Keys.ConsumerKey}&consumer_secret=${Constants.Keys.ConsumerSecret}`
         
         return axios.get(url).then(response => {
             dispatch({

@@ -5,6 +5,7 @@ import {EvilIcons, Ionicons} from '@expo/vector-icons';
 import {connect, Provider} from 'react-redux';
 
 import HomePage from './src/components/Home/HomePage';
+import SubCategories from "./src/components/Products/SubCategories";
 import Products from "./src/components/Products/ProductList";
 import Product from "./src/components/Products/Product";
 import CartPage from './src/components/Cart/CartPage';
@@ -39,6 +40,12 @@ const DrawerNavigation = DrawerNavigator({
         screen: Product,
         navigationOptions: ({navigation}) => ({
             title: navigation.state.params.product.name
+        }),
+    },
+    SubCategories: {
+        screen: SubCategories,
+        navigationOptions: ({navigation}) => ({
+            title: 'navigation.state.params.product.name'
         }),
     },
     CartPage: {
@@ -77,7 +84,7 @@ const StackNavigation = StackNavigator({
 
 const drawerButton = (navigation) => (
     <Text
-        style={{padding: 15, color: 'white'}}
+        style={{padding: 15, color: 'black'}}
         onPress={() => {
             if (navigation.state.index === 0) {
                 navigation.navigate('DrawerOpen')
@@ -89,7 +96,7 @@ const drawerButton = (navigation) => (
 );
 
 const cartButton = (navigation, screenProps) => (
-    <Text style={{padding: 15, color: 'white'}}
+    <Text style={{padding: 15, color: 'black'}}
           onPress={() => {
               navigation.navigate('CartPage')
           }}

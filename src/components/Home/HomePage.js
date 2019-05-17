@@ -26,7 +26,7 @@ class HomePage extends React.Component {
                             keyExtractor={this._keyExtractor}
                             renderItem={({item}) =>
                                   <TouchableHighlight style={styles.touchable}
-                                                      onPress={() => navigate("Products", {product: item})}
+                                                      onPress={() => navigate("SubCategories", {category: item})}
                                                       underlayColor="white">
                                     <View style={styles.view}>
                                       <Image

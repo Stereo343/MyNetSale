@@ -10,7 +10,7 @@ export function getCategories() {
         return axios.get(url).then(response => {
             let categories = [];
             for (const category in response.data) {
-                if (response.data[category]._links.hasOwnProperty("up")) {
+                if (!response.data[category]._links.hasOwnProperty("up") && response.data[category].name !== "Uncategorized") {
                     categories.push(response.data[category]);
                 }
             }
